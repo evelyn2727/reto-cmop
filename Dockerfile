@@ -1,9 +1,13 @@
 FROM node:lts-alpine3.14
-    
-RUN mkdir /app
-WORKDIR   /app
 
-COPY ./devops-challenge/* /app
+
+RUN addgroup -S LAUNCHER && adduser -S LAUNCHER -G LAUNCHER
+
+USER LAUNCHER
+
+WORKDIR /home/LAUNCHER
+
+COPY ./devops-challenge/* /home/LAUNCHER
 
 RUN npm install
 

@@ -12,8 +12,8 @@ Proceso
 - Probar endpoints:
   ```sh
   curl -X GET localhost:3000/
-  curl -X GET localhost:3000/ cheers
-  curl -X GET localhost:3000/ private
+  curl -X GET localhost:3000/cheers
+  curl -X GET localhost:3000/private
   ```
 
 - Para Jenkins:

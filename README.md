@@ -23,6 +23,8 @@ Proceso
 
 - Para terraform:
   ```sh
+  cd infra
+  #Actualizar el archivo cred.tf con las credenciales correctas
   terraform init
   terraform apply
   ```

@@ -33,15 +33,6 @@ resource "aws_key_pair" "retopem" {
   public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDlDp8tu+z5vY4v7gjFEtKG3JPMDSMEhYGIaVuC6reHEliybyGwiUP+QGaNZbRLl+lPo1J1YVBzgImlNICVASt5XGrbZFgIkCRxNOB/ft5LL326vhW6xpnb6lpkk0rZ1/w4Qdj9Yqn/UqW3dZyxxowRuL/T98GDceKFlWKxbHt98qneN86NqP+h17psENiYVPT6q7U1Bhm34rL/vnsequtbTkAhwHZu3i0LHTO4tzVzHR84dJjAKzOqBWuUCHOIwMezJwdtGSrC55O2iSF2ffb9QMVHZ0zzvaN8rA71GIrIN0apqDftY34pkTLLZA3Szv1QEij10dO+5ijpWCkeFu9VJ9CtcR04vCkobwE7DJ+61nXmBKzzztCWdE2V9ISf6Lxlx1rgMT3P3UpZwwpK4ngel9HqdWFWU+TnbqxeHzT1BdvKqKV2X5fm6wOSnfm9bArFBsRLAeSElb/StU80MrH238EkvEQjxdjPD2zH38rEdn6ISV9kSStxrIG3DSreHHJFrFH4I6FOkJ/v6xrmdOPKRQXZioiJCfy5rxgvJCq2GaMigOW/4ellIIrPYxX1wTV1MqclgEbrt72Uy2MGkJI1DEfp6HxMXMfc6OaxFy6Xww+y96Z5MM3I8uCTj7NKgptqiDZ2/sfDecwyqPMoxGd06Mq/X4jfJ3Eq7iEmkpdxMQ=="
 }
 
-resource "aws_ebs_volume" "example" {
-  availability_zone = "us-west-2a"
-  size              = 40
-
-  tags = {
-    Name = "HelloWorld"
-  }
-}
-
 resource "aws_instance" "retoec2" {
   subnet_id = "subnet-895baae2"
 

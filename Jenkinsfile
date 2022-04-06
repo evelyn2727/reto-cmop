@@ -8,23 +8,23 @@ pipeline {
   stages {
     stage('Cloning Git') {
       steps {
-        git([url: 'https://github.com/arcmop/reto-cesar-ortiz.git', branch: 'master', credentialsId: 'xxxxxxxxxxxx'])
+        checkout([
+        $class: 'GitSCM',
+        branches: [[name: '*/main']],
+        doGenerateSubmoduleConfigurations: false,
+        extensions: [],
+        submoduleCfg: [],
+        userRemoteConfigs:
+        [
+          [ url: 'https://github.com/arcmop/reto-cesar-ortiz.git']
+        ]
+      ])
       }
     }
     stage('Construir imagen') {
       steps {
         script {
           dockerImage = docker.build imagename
-        }
-      }
-    }
-    stage('Deployar Imagen') {
-      steps {
-        script {
-          docker.withRegistry( '', registryCredential ) {
-            dockerImage.push("$BUILD_NUMBER")
-            dockerImage.push('latest')
-          }
         }
       }
     }

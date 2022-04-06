@@ -7,7 +7,7 @@ USER LAUNCHER
 
 WORKDIR /home/LAUNCHER
 
-COPY ./devops-challenge/* /home/LAUNCHER
+COPY ./devops-challenge/* /home/LAUNCHER/
 
 RUN npm install
 
